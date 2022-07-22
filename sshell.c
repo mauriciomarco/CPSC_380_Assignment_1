@@ -7,13 +7,6 @@
 
 #define MAX_LINE 80 /* The maximum length command */
 
-			 /*
-			 * After reading user input, the steps are:
-			 * (1) fork a child process using fork()
-			 * (2) the child process will invoke execvp()
-		     * (3) if command included &, parent will invoke wait()
-             */
-
 int main(void)
 {
 	char *args[MAX_LINE/2 + 1]; /* command line arguments */
@@ -61,9 +54,9 @@ int main(void)
 				for (; j < i; j++) {
 					sleep(1);
 				}
-				wait_pid = wait(&status);
+				wait_pid = wait(&status); /* wait() */
 				printf("Child has finished: PID = %d\n", wait_pid);
-				if (WIFEXITED(status)) {
+				if (WIFEXITED(status)) { 
 					printf("Child exited with code %d\n", WEXITSTATUS(status));
 				}
 				else {
