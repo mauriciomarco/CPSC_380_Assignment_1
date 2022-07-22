@@ -22,7 +22,7 @@ The  objective  of  this  code  consists  of  designing  a  C/C++  program  to  
 	
 ## Known Errors
 
-* "&" command not recognized (i.e "ls -l &" is seen as garbage option
+* "&" command not recognized (i.e "ls -l &" is seen as garbage option)
 
 ## Build Instructions
 
